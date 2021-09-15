@@ -67,7 +67,7 @@ const API = new FetchWrapper("https://v6.exchangerate-api.com/"); //replace YOUR
 API.get(`v6/6d390f7501f39caf2beb6e4c/latest/USD`).then((data) => {
 	// console.log(data.conversion_rates);
 
-	rates = Object.entries(data.conversion_rates);
+	rates = Object.entries(data.conversion_rates); // data.conversion_rates returns an object with the currency as key and the conversion rate as the corresponding value. With Object.entries I turn it into an array of arrays with the same data so I can more easily find the matching currency and the conversion rate, when I change the target currency from the select element
 });
 
 // base.addEventListener("change", getConversionRates);
